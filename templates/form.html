@@ -1,0 +1,32 @@
+{% extends "layout.html" %} {% block main %}
+<form action="{{ url }}" method="POST" class="p-8">
+	<section class="mb-2 flex flex-col space-y-2">
+		<label class="font-bold text-xl" for="amount_dz">Algerian Dinars</label>
+		<input
+			class="border-2 rounded p-2 border-black"
+			type="number"
+			name="amount_dz"
+			id="amount_dz"
+		/>
+	</section>
+
+	<section class="mb-4 flex flex-col space-y-2">
+		<label class="font-bold text-xl" for="amount">{{ currency }}</label>
+		<input
+			class="border-2 rounded p-2 border-black"
+			type="number"
+			name="amount"
+			id="amount"
+			value="{{ value }}"
+			readonly
+		/>
+	</section>
+
+	<button
+		class="bg-black text-white font-bold capitalize px-4 py-2 rounded hover:bg-gray-800"
+		type="submit"
+	>
+		convert
+	</button>
+</form>
+{% endblock %}
